@@ -54,6 +54,10 @@ void Update()
     
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
+    cloudPos.x += 5;
+    if(cloudPos.x >= 300){
+        cloudPos.x = -400;
+    }
     // 弾の描画
     if (bulletPos.x > -999) {
         DrawImage("bullet.png", bulletPos);
@@ -71,3 +75,4 @@ void Update()
     DrawText(FormatString("%02d", score), Vector2(-319, 199), Color::black);
     DrawText(FormatString("%02d", score), Vector2(-320, 200), Color::white);
 }
+
