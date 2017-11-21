@@ -40,15 +40,11 @@ void Update()
     
     // 弾の移動
     if (bulletPos.x > -999) {
-<<<<<<< HEAD
         bulletPos.x += 10 * Time::deltaTime;
-        
-=======
         bulletPos.x += 200 * Time::deltaTime;
         if(bulletPos.x  > 310){
             bulletPos.x = -999;
         }
->>>>>>> 120c1140d9311832dccbcdf4bb3b5601b6d12aa4
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
