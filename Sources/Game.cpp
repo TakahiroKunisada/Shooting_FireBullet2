@@ -40,12 +40,19 @@ void Update()
     
     // 弾の移動
     if (bulletPos.x > -999) {
+<<<<<<< HEAD
         bulletPos.x += 10 * Time::deltaTime;
         
+=======
+        bulletPos.x += 200 * Time::deltaTime;
+        if(bulletPos.x  > 310){
+            bulletPos.x = -999;
+        }
+>>>>>>> 120c1140d9311832dccbcdf4bb3b5601b6d12aa4
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
-            score += 1;         // スコアの加算
+            score += 100;         // スコアの加算
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
     }
@@ -80,8 +87,8 @@ void Update()
     FillRect(targetRect, Color::red);
     
     // スコアの描画
-    SetFont("nicoca_v1.ttf", 20.0f);
-    DrawText(FormatString("%02d", score), Vector2(-319, 199), Color::black);
-    DrawText(FormatString("%02d", score), Vector2(-320, 200), Color::white);
+    SetFont("nicoca_v1.ttf", 50.0f);
+    DrawText(FormatString("%05d", score), Vector2(-319, 199), Color::black);
+    DrawText(FormatString("%05d", score), Vector2(-320, 200), Color::white);
 }
 
