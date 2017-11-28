@@ -30,13 +30,18 @@ void Start()
     vec = 1;
 }
 
+void playSE(){
+    PlaySound("se_maoudamashii_explosion03.mp3");
+}
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
 void Update()
 {
     // 弾の発射
     if (bulletPos.x <= -999 && Input::GetKeyDown(KeyMask::Space)) {
         bulletPos = cannonPos + Vector2(50, 10);
+        playSE();
     }
+    
     
     // 弾の移動
     if (bulletPos.x > -999) {
@@ -50,6 +55,7 @@ void Update()
         if (targetRect.Overlaps(bulletRect)) {
             score += 100;         // スコアの加算
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
+            PlaySound("se_maoudamashii_explosion06.mp3");
         }
     }
     
