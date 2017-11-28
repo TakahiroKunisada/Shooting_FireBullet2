@@ -28,6 +28,7 @@ void Start()
     bulletPos.x = -999;
     score = 0;
     vec = 1;
+    PlayBGM("bgm_maoudamashii_8bit07.mp3");
 }
 
 void playSE(){
